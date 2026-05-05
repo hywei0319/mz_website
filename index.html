@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>名洲纺织 | 智慧科技引领绿色面料</title>
+    <!-- 引入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 Font Awesome 图标 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;700&display=swap');
+        
+        :root {
+            --brand-blue: #0066b3;
+            --brand-green: #2d6a4f;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(0,102,179,0.92) 0%, rgba(45,106,79,0.85) 100%),
+                        url('https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&q=80&w=2000') center/cover;
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-card {
+            background: linear-gradient(145deg, #ffffff, #f9fafb);
+        }
+
+        /* Logo 样式 */
+        .logo-img {
+            height: 52px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text-fallback {
+            display: none;
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--brand-blue);
+            line-height: 1;
+        }
+
+        .qr-wrapper {
+            background: white;
+            padding: 8px;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+
+        .qr-img {
+            width: 160px;
+            height: 160px;
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+
+    <!-- 导航栏 -->
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo 区域：具备自动纠错功能 -->
+                <a href="#" class="flex items-center space-x-3">
+                    <img src="MingZhou_no_bg.png" alt="名洲纺织" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="logo-text-fallback flex-col">
+                        <span class="text-xl">MING ZHOU</span>
+                        <span class="text-sm tracking-[0.3em] font-normal">名洲纺织</span>
+                    </div>
+                </a>
+                
+                <div class="hidden md:flex space-x-10 text-sm font-bold uppercase tracking-wider">
+                    <a href="#about" class="text-gray-600 hover:text-[#0066b3] transition">关于我们</a>
+                    <a href="#advantage" class="text-gray-600 hover:text-[#0066b3] transition">核心优势</a>
+                    <a href="#products" class="text-gray-600 hover:text-[#0066b3] transition">面料系列</a>
+                    <a href="#smart" class="text-gray-600 hover:text-[#0066b3] transition">智慧工厂</a>
+                    <a href="#contact" class="px-6 py-2 bg-[#0066b3] text-white rounded-full hover:bg-blue-700 shadow-md transition">联系我们</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主视觉区域 -->
+    <section class="relative h-screen flex items-center hero-gradient text-white pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center md:text-left">
+            <div class="max-w-3xl">
+                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-8">
+                    端到端智能<br>重新定义<span class="text-green-400">绿色纺织</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-12 text-blue-50 opacity-90 leading-relaxed font-light">
+                    名洲纺织始创于2008年。一家集科研、织造、印染及后整理于一体的全产业链高新技术企业。
+                </p>
+                <div class="flex flex-col sm:flex-row gap-5 justify-center md:justify-start">
+                    <a href="#products" class="px-10 py-4 bg-white text-[#0066b3] font-bold rounded-xl hover:bg-gray-100 transition shadow-xl">探索面料方案</a>
+                    <a href="#smart" class="px-10 py-4 border-2 border-white/50 text-white font-bold rounded-xl hover:bg-white/10 transition backdrop-blur-sm">了解名瀚智慧工厂</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关键数据 -->
+    <section id="about" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
+                <div class="text-center p-10 rounded-3xl stat-card border border-gray-100 shadow-sm">
+                    <div class="text-4xl md:text-5xl font-black text-[#0066b3] mb-3">1,800 <span class="text-lg font-bold">T</span></div>
+                    <p class="text-gray-500 font-bold uppercase tracking-tighter">月生产能力</p>
+                </div>
+                <div class="text-center p-10 rounded-3xl stat-card border border-gray-100 shadow-sm">
+                    <div class="text-4xl md:text-5xl font-black text-[#0066b3] mb-3">250+</div>
+                    <p class="text-gray-500 font-bold uppercase tracking-tighter">专业员工</p>
+                </div>
+                <div class="text-center p-10 rounded-3xl stat-card border border-gray-100 shadow-sm">
+                    <div class="text-4xl md:text-5xl font-black text-[#0066b3] mb-3">200+</div>
+                    <p class="text-gray-500 font-bold uppercase tracking-tighter">先进织机</p>
+                </div>
+                <div class="text-center p-10 rounded-3xl stat-card border border-gray-100 shadow-sm">
+                    <div class="text-4xl md:text-5xl font-black text-[#0066b3] mb-3">120+</div>
+                    <p class="text-gray-500 font-bold uppercase tracking-tighter">加工设备</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心优势 -->
+    <section id="advantage" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl font-black mb-4">核心竞争优势</h2>
+                <div class="w-24 h-1.5 bg-[#0066b3] mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="bg-white p-10 rounded-[2rem] border border-gray-100 shadow-xl shadow-gray-100/50 card-hover">
+                    <div class="w-16 h-16 bg-blue-50 text-[#0066b3] rounded-2xl flex items-center justify-center text-3xl mb-8">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-5">技术创新</h3>
+                    <p class="text-gray-600 leading-loose">依托自主研发中心，深耕高性能抓绒、技术型摇粒绒，通过精准控制实现舒适与功能的完美平衡。</p>
+                </div>
+                <div class="bg-white p-10 rounded-[2rem] border border-gray-100 shadow-xl shadow-gray-100/50 card-hover">
+                    <div class="w-16 h-16 bg-green-50 text-green-700 rounded-2xl flex items-center justify-center text-3xl mb-8">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-5">可持续发展</h3>
+                    <p class="text-gray-600 leading-loose">荣获 Oeko-Tex 及 GRS 国际认证。广泛使用再生纤维与低碳工艺，构建环保绿色供应链。</p>
+                </div>
+                <div class="bg-white p-10 rounded-[2rem] border border-gray-100 shadow-xl shadow-gray-100/50 card-hover">
+                    <div class="w-16 h-16 bg-purple-50 text-purple-700 rounded-2xl flex items-center justify-center text-3xl mb-8">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-5">数智化转型</h3>
+                    <p class="text-gray-600 leading-loose">深度集成工业 4.0 体系。通过数字孪生与 AGV 智能物流，实现生产全链路可视化管理。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品中心 -->
+    <section id="products" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16">
+                <div>
+                    <h2 class="text-4xl font-black mb-4">面料解决方案</h2>
+                    <p class="text-gray-500 text-xl font-light">满足全球知名品牌严苛标准的多元化面料</p>
+                </div>
+                <div class="hidden md:block">
+                    <button class="text-[#0066b3] font-bold group">
+                        查看完整目录 <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- 运动面料 -->
+                <div class="group relative overflow-hidden rounded-[2rem] h-[450px] shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&q=80&w=800" alt="功能性运动面料" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-8">
+                        <h4 class="text-white text-2xl font-bold mb-3">功能性运动面料</h4>
+                        <p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition duration-500">高性能抓绒与技术型摇粒绒</p>
+                    </div>
+                </div>
+                <!-- 环保面料 -->
+                <div class="group relative overflow-hidden rounded-[2rem] h-[450px] shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&q=80&w=800" alt="环保再生面料" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-8">
+                        <h4 class="text-white text-2xl font-bold mb-3">环保再生面料</h4>
+                        <p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition duration-500">GRS认证，再生纤维循环利用</p>
+                    </div>
+                </div>
+                <!-- 校服面料 -->
+                <div class="group relative overflow-hidden rounded-[2rem] h-[450px] shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1523050853063-88036662700e?auto=format&fit=crop&q=80&w=800" alt="校服制服面料" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-8">
+                        <h4 class="text-white text-2xl font-bold mb-3">校服制服面料</h4>
+                        <p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition duration-500">耐穿舒适，符合国际高标准</p>
+                    </div>
+                </div>
+                <!-- 家居面料 -->
+                <div class="group relative overflow-hidden rounded-[2rem] h-[450px] shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1558976825-6b1b03a03719?auto=format&fit=crop&q=80&w=800" alt="柔软家居面料" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-8">
+                        <h4 class="text-white text-2xl font-bold mb-3">柔软家居面料</h4>
+                        <p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition duration-500">情侣居家舒适之选，极致亲肤</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 智慧工厂 -->
+    <section id="smart" class="py-24 bg-[#0066b3] text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-16 relative z-10">
+            <div class="lg:w-1/2">
+                <span class="inline-block px-4 py-1 bg-white/20 rounded-full text-blue-100 text-xs font-bold mb-6">FUTURE VISION 2026</span>
+                <h2 class="text-4xl md:text-6xl font-black mb-8 leading-tight">名瀚智慧工厂</h2>
+                <p class="text-xl text-blue-100 mb-10 leading-relaxed font-light">
+                    我们将面料制造带入全新纪元。通过深度集成的数字孪生系统与智能物流，实现从订单到交付的全链路秒级响应。
+                </p>
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-green-400">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span class="text-lg font-medium">AGV 智能搬运系统</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-green-400">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span class="text-lg font-medium">数字孪生可视化生产</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-green-400">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span class="text-lg font-medium">工业 4.0 自动化体系</span>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:w-1/2 relative">
+                <div class="p-4 bg-white/5 rounded-[3rem] backdrop-blur-2xl border border-white/10">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200" alt="智慧工厂预览" class="rounded-[2.5rem] shadow-2xl">
+                </div>
+                <div class="absolute -bottom-10 -left-10 w-48 h-48 bg-blue-400/20 rounded-full blur-3xl"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 生产阵列 -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-black mb-16">顶级生产阵列</h2>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="p-12 bg-gray-50 rounded-[2.5rem] border border-gray-100 hover:border-[#0066b3]/30 transition">
+                    <p class="text-gray-400 text-xs font-bold uppercase tracking-widest mb-4">织机数量</p>
+                    <div class="text-5xl font-black text-gray-900">200+</div>
+                </div>
+                <div class="p-12 bg-gray-50 rounded-[2.5rem] border border-gray-100 hover:border-[#0066b3]/30 transition">
+                    <p class="text-gray-400 text-xs font-bold uppercase tracking-widest mb-4">进口染缸</p>
+                    <div class="text-5xl font-black text-gray-900">40+</div>
+                </div>
+                <div class="p-12 bg-gray-50 rounded-[2.5rem] border border-gray-100 hover:border-[#0066b3]/30 transition">
+                    <p class="text-gray-400 text-xs font-bold uppercase tracking-widest mb-4">后整理设备</p>
+                    <div class="text-5xl font-black text-gray-900">70+</div>
+                </div>
+                <div class="p-12 bg-gray-50 rounded-[2.5rem] border border-gray-100 hover:border-[#0066b3]/30 transition">
+                    <p class="text-gray-400 text-xs font-bold uppercase tracking-widest mb-4">定型机</p>
+                    <div class="text-5xl font-black text-gray-900">10+</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 & 联系我们 -->
+    <footer id="contact" class="bg-gray-950 text-white pt-24 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-20 mb-20 items-start">
+                <!-- 公司信息 -->
+                <div>
+                    <div class="mb-10">
+                        <!-- 页脚 Logo -->
+                        <img src="MingZhou_no_bg.png" alt="名洲纺织" class="h-14 w-auto mb-6" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="logo-text-fallback flex-col" style="color: white; display: none;">
+                            <span class="text-2xl">MING ZHOU</span>
+                            <span class="text-sm tracking-[0.3em] font-normal opacity-70">名洲纺织</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 leading-loose text-lg font-light mb-10">
+                        以匠心品质与智慧科技，为全球客户提供可持续的纺织解决方案。重新定义绿色纺织。
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#0066b3] transition border border-white/10"><i class="fab fa-weixin"></i></a>
+                        <a href="#" class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#0066b3] transition border border-white/10"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#0066b3] transition border border-white/10"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+
+                <!-- 快速链接 -->
+                <div>
+                    <h4 class="text-xl font-bold mb-10 pb-2 border-b border-white/10 inline-block">快速导航</h4>
+                    <ul class="space-y-6 text-gray-400 font-light">
+                        <li><a href="#about" class="hover:text-white transition">公司简介</a></li>
+                        <li><a href="#advantage" class="hover:text-white transition">核心优势</a></li>
+                        <li><a href="#products" class="hover:text-white transition">面料系列</a></li>
+                        <li><a href="#smart" class="hover:text-white transition">名瀚智慧制造</a></li>
+                    </ul>
+                </div>
+
+                <!-- 联系二维码：重点修复 -->
+                <div class="text-center lg:text-left">
+                    <h4 class="text-xl font-bold mb-10 pb-2 border-b border-white/10 inline-block">联系我们</h4>
+                    <div class="qr-wrapper mb-6">
+                        <img src="486b0fe2dd832f501420bfc76c920bd3.jpg" alt="扫码联系名洲纺织" class="qr-img" onerror="this.src='https://via.placeholder.com/160x160?text=Scan+QR+Contact';">
+                    </div>
+                    <p class="text-gray-400 font-medium tracking-widest text-sm">扫一扫，获取专业面料咨询</p>
+                </div>
+            </div>
+            
+            <div class="pt-10 border-t border-white/5 text-center text-gray-600 text-xs tracking-widest">
+                <p>&copy; 2026 MING ZHOU TEXTILE. 广东名洲纺织有限公司. ALL RIGHTS RESERVED.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-10 right-10 w-14 h-14 bg-[#0066b3] text-white rounded-2xl shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition z-50 group">
+        <i class="fas fa-arrow-up text-xl group-hover:-translate-y-1 transition"></i>
+    </button>
+
+</body>
+</html>
